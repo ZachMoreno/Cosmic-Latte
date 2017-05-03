@@ -1,0 +1,29 @@
+{
+  "name": "cosmic-latte",
+  "version": "1.0.0",
+  "description": "simple auth server",
+  "main": "cosmic-latte.js",
+  "scripts": {
+    "start": "node cosmic-latte.js",
+    "dev": "nodemon cosmic-latte.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachMoreno/Cosmic-Latte.git"
+  },
+  "author": "Zachariah Moreno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZachMoreno/Cosmic-Latte/issues"
+  },
+  "homepage": "https://github.com/ZachMoreno/Cosmic-Latte#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "jsonwebtoken": "^7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

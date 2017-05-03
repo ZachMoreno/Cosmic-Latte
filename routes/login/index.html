@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cosmic Latte | Login</title>
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #455A64;
+            }
+
+            h1, h2 {
+                font-family: sans-serif;
+                font-weight: normal;
+                text-align: center;
+                margin: 0;
+            }
+
+            h1 {
+                color: #1DE9B6;
+                padding-top: 30px;
+            }
+
+            h2 {
+                color: #00BFA5
+            }
+
+            header {
+                padding-bottom: 10vh;
+                overflow: visible;
+                background-color: #263238;
+            }
+
+            .card {
+                width: 30vw;
+                background-color: white;
+                border-radius: 5px;
+                padding: 2vh 4vw;
+                margin: -5vh auto auto auto;
+                display: block;
+            }
+
+            .card input {
+                width: 90%;
+                display: block;
+                clear: both;
+                margin: 20px 0;
+                padding: 10px;
+                border-radius: 5;
+                font-size: 16px;
+            }
+
+            .card input:last-of-type {
+                margin-bottom: 40px;
+            }
+
+            .card button {
+                float: right;
+                margin-right: 3%;
+                margin-top: -17px;
+                border-radius: 50%;
+                background-color: #64FFDA;
+                padding: 16px 20px;
+                text-align: center;
+                font-size: 22px;
+                border: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Cosmic Latte</h1>
+        </header>
+
+        <section>
+            <div class="card">
+                <h2>Login</h2>
+
+                <form>
+                    <input type="text" placeholder="email" value="xachmoreno@gmail.com" required id="email"/>
+                    <input type="password" placeholder="password" value="IMustNotTellLies" required id="password"/>
+
+                    <button id="submit" type="button">✓</button>
+                </form>
+            </div> <!-- end .card -->
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+        <script>
+            // event
+            $('#submit').on('click', function(event) {
+                // build payload
+                var payload = {
+                    'email': $('#email').val(),
+                    'password': $('#password').val()
+                };
+
+                // serealize
+                payload = JSON.stringify(payload);
+
+                // request
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:9191/api/auth',
+                    contentType: 'application/json',
+                    data: payload
+                }).then(function(response) {
+                    localStorage.setItem('token', response.token);
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://localhost:9191/dashboard',
+                        beforeSend: function(xhr){xhr.setRequestHeader('auth-token', response.token);}
+                    }).then(function(success) {
+                        console.log(success);
+                    }).catch(function(error) {
+                        console.log(error);
+                    });
+                }).catch(function(error) {
+                    console.log(error);
+                });
+            });
+        </script>
+    </body>
+</html>
