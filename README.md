@@ -13,8 +13,8 @@ JWT Auth Demo App
 
 ## Todo
 
-[ ] SQLite DB
-[ ] Create accounts
-[ ] Dashboard ui
+- [ ] SQLite DB
+- [ ] Create accounts
+- [ ] Dashboard ui
 
 Pull requests always welcome :coffee:
