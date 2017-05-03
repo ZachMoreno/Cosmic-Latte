@@ -24,13 +24,19 @@
             }
 
             h2 {
-                color: #00BFA5
+                color: #00BFA5;
             }
 
             header {
                 padding-bottom: 10vh;
                 overflow: visible;
                 background-color: #263238;
+            }
+
+            header h2 {
+                font-weight: 100;
+                font-size: 19.6px;
+                color: ##64FFDA;
             }
 
             .card {
@@ -42,14 +48,21 @@
                 display: block;
             }
 
+            .card form {
+                margin: 0;
+                padding: 0;
+            }
+
             .card input {
-                width: 90%;
+                width: 100%;
                 display: block;
                 clear: both;
                 margin: 20px 0;
-                padding: 10px;
-                border-radius: 5;
+                padding: 10px 0;
                 font-size: 16px;
+                color: #455A64;
+                border: none;
+                border-bottom: 1px solid #00BFA5;
             }
 
             .card input:last-of-type {
@@ -73,6 +86,7 @@
     <body>
         <header>
             <h1>Cosmic Latte</h1>
+            <h2>JWT Auth Demo App</h2>
         </header>
 
         <section>
