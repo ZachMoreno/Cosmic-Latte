@@ -1,11 +1,11 @@
 # Cosmic-Latte
 JWT Auth Demo App
 
-## Install
+## Clone
     git clone git@github.com:ZachMoreno/Cosmic-Latte.git
-    cd Cosmic-Latte && npm install
 
 ## Run
+    cd cosmic-latte
     docker-compose up
 
 ![alt text](./app/images/ScreenShot.png)
