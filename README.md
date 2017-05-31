@@ -9,7 +9,7 @@ JWT Auth Demo App
     npm run dev
     npm run start
 
-![alt text](./images/ScreenShot.png)
+![alt text](./app/images/ScreenShot.png)
 
 ## Todo
 
