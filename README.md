@@ -6,14 +6,14 @@ JWT Auth Demo App
     cd Cosmic-Latte && npm install
 
 ## Run
-    npm run dev
-    npm run start
+    docker-compose up
 
 ![alt text](./app/images/ScreenShot.png)
 
 ## Todo
 
-- [ ] SQLite DB
+- [x] Wrap in docker container
+- [ ] SQLite DB to persist accounts
 - [ ] Create accounts
 - [ ] Dashboard ui
 
